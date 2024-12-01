@@ -3,12 +3,11 @@ use std::{collections::HashMap, fs};
 fn main() {
     let (left_list, right_list) = construct_sorted_lists("./input.txt");
     let total_distance = calculate_distance(&left_list, &right_list);
-    println!("PART 1: total_distance: {:?}", total_distance);
+    println!("PART 1 - total_distance: {:?}", total_distance);
 
     let right_occurances = count_occurances(&right_list);
     let similarity = calculate_similarity(&left_list, &right_occurances);
-
-    println!("PART 2: similarity: {:?}", similarity);
+    println!("PART 2 - similarity: {:?}", similarity);
 }
 
 fn construct_sorted_lists(path: &str) -> (Vec<usize>, Vec<usize>) {
