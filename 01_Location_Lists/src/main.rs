@@ -14,7 +14,7 @@ fn construct_sorted_lists(path: &str) -> (Vec<usize>, Vec<usize>) {
     let mut left_list: Vec<usize> = vec![];
     let mut right_list: Vec<usize> = vec![];
     let contents = fs::read_to_string(path).unwrap();
-    for line in contents.split("\n") {
+    for line in contents.trim().split("\n") {
         let ids: Vec<&str> = line.split("   ").map(|id| id.trim()).collect();
         let left_id = ids[0].parse::<usize>().unwrap();
         let right_id = ids[1].parse::<usize>().unwrap();
