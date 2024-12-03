@@ -23,10 +23,6 @@ fn part_2(input: &str) -> i32 {
     total
 }
 
-fn multiply_and_sum_tuples(tuples: Vec<(i32, i32)>) -> i32 {
-    tuples.iter().map(|(a, b)| a * b).sum()
-}
-
 fn parse_tuples(input: &str) -> Vec<(i32, i32)> {
     let re = Regex::new(r"mul\((\d+),(\d+)\)").unwrap();
 
@@ -37,6 +33,10 @@ fn parse_tuples(input: &str) -> Vec<(i32, i32)> {
         .collect();
 
     return tuples;
+}
+
+fn multiply_and_sum_tuples(tuples: Vec<(i32, i32)>) -> i32 {
+    tuples.iter().map(|(a, b)| a * b).sum()
 }
 
 fn filter_instructions(line: &str) -> String {
