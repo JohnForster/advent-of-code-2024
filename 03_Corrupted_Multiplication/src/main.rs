@@ -16,15 +16,15 @@ fn part_1(input: &str) -> i32 {
     total
 }
 
-fn multiply_and_sum_tuples(tuples: Vec<(i32, i32)>) -> i32 {
-    tuples.iter().map(|(a, b)| a * b).sum()
-}
-
 fn part_2(input: &str) -> i32 {
     let filtered_instructions = filter_instructions(input);
     let tuples = parse_tuples(&filtered_instructions);
     let total = multiply_and_sum_tuples(tuples);
     total
+}
+
+fn multiply_and_sum_tuples(tuples: Vec<(i32, i32)>) -> i32 {
+    tuples.iter().map(|(a, b)| a * b).sum()
 }
 
 fn parse_tuples(input: &str) -> Vec<(i32, i32)> {
